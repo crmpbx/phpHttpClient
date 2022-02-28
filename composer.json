@@ -2,7 +2,7 @@
     "name": "crmpbx/http-client",
     "description": "Http client for pbx infrastructure",
     "type": "library",
-    "license": "poprietary",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Mikita Darashko",
