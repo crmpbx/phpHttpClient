@@ -3,7 +3,7 @@
 namespace crmpbx\httpClient;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\RequestInterface;
 
 class HttpClient extends Client
@@ -17,8 +17,8 @@ class HttpClient extends Client
                 'timeout' => $timeout ?? 2,
                 'http_errors' => false
             ]);
-        } catch (ClientException $e) {
-            $response = $e->getResponse();
+        } catch (GuzzleException $e) {
+            $response = new \GuzzleHttp\Psr7\Response(500, [], $e->getMessage());
         }
 
         return new Response($response, $timer->getStampForCurrentTime(microtime(true)));
