@@ -18,7 +18,7 @@ class Timer
     {
         $startTime = $this->start;
         $passTime = round($endTime - $startTime, 4);
-        return compact($startTime, $endTime, $passTime);
+        return compact((string)$startTime, (string)$endTime, (string)$passTime);
     }
 
 }
