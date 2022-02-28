@@ -12,13 +12,13 @@ class Timer
     }
     /**
      * @return array
-     * ['start'=>(float)timestamp, 'end'=>(float)timestamp, 'passTime'=>(float)end-start
+     * ['startTime'=>(float)timestamp, 'endTime'=>(float)timestamp, 'passTime'=>(float)end-start
      */
     public function getStampForCurrentTime(float $endTime): array
     {
         $startTime = $this->start;
         $passTime = round($endTime - $startTime, 4);
-        return compact((string)$startTime, (string)$endTime, (string)$passTime);
+        return ['startTime' => $startTime, 'endTime' => $endTime, 'passTime' => $passTime];
     }
 
 }
