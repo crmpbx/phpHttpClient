@@ -2,7 +2,9 @@
 
 namespace crmpbx\httpClient;
 
+use GuzzleHttp\Psr7\Uri;
 use JetBrains\PhpStorm\ArrayShape;
+use Psr\Http\Message\RequestInterface;
 
 class Request extends \GuzzleHttp\Psr7\Request
 {
@@ -22,5 +24,10 @@ class Request extends \GuzzleHttp\Psr7\Request
     protected function setBody($data): string
     {
         return (string)json_encode($data);
+    }
+
+    public function withUrl(string $url):RequestInterface
+    {
+        return $this->withUri( new Uri($url));
     }
 }
