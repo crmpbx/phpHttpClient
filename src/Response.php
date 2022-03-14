@@ -23,6 +23,7 @@ class Response
 
     private function init(ResponseInterface $response)
     {
+
         $this->status = $response->getStatusCode();
         $this->headers = $response->getHeaders();
         if($content = json_decode($response->getBody()->getContents(), true))
