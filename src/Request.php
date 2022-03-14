@@ -28,6 +28,6 @@ class Request extends \GuzzleHttp\Psr7\Request
 
     public function withUrl(string $url):RequestInterface
     {
-        return $this->withUri( new Uri($url));
+        return $this->withUri(new Uri($url));
     }
 }
