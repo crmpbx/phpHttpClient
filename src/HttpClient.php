@@ -18,7 +18,7 @@ class HttpClient extends Client
                 'http_errors' => false
             ]);
         } catch (GuzzleException $e) {
-            $response = new \GuzzleHttp\Psr7\Response(500, [], $e->getMessage());
+            $response = new \GuzzleHttp\Psr7\Response(418, [], $e->getMessage());
         }
 
         return new Response($response, $timer->getStampForCurrentTime(microtime(true)));
